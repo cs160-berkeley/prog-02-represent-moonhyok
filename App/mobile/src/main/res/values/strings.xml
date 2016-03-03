@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Represent!</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="zip_hint">Zipcode</string>
+    <string name="loc_hint">Current Location</string>
+
+    <string name="senate">Senate</string>
+    <string name="house">House of Representative</string>
+    <string name="showing">Showing Congressional Represents of: </string>
+
+    <string name="tweet">Sample twit that will be pulled from the web, using the API or anything that is provided</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_congressional_main">CongressionalMain</string>
+</resources>
