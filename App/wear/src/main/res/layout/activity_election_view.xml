@@ -27,15 +27,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:textSize="8pt"
-            android:layout_marginTop="10dp"
-            android:text="Alameda, CA"/>
+            android:layout_marginTop="10dp"/>
 <!---->
         <LinearLayout
+            android:id="@+id/hide1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="25dp"
             android:orientation="horizontal">
 
             <TextView
@@ -46,19 +46,20 @@
 
             <TextView
                 android:id="@+id/obama"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginLeft="15dp"
                 android:textSize="12pt"
                 />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/hide2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="25dp"
             android:layout_gravity="center|top"
             android:orientation="horizontal">
 
@@ -70,9 +71,9 @@
 
             <TextView
                 android:id="@+id/romney"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginLeft="15dp"
                 android:textSize="12pt"
                 />
 

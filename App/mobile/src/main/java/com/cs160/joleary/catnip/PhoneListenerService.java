@@ -28,57 +28,21 @@ private static final String TOAST = "/send_toast";
 
 
         if (messageEvent.getPath().equalsIgnoreCase("/congress")){
-            Intent intent = new Intent(getBaseContext(),CongressionalMain.class);
+            Intent intent = new Intent(getBaseContext(),MainActivity.class);
             String[] candidates = value.split("&");
             String zipcode = candidates[0];
-            String[] candidate1 = candidates[1].split("@");
-            String[] candidate2 = candidates[2].split("@");
-            String[] candidate3 = candidates[3].split("@");
-            String[] candidate4 = candidates[4].split("@");
+            boolean cameFromWatch = false;
+            if (candidates[1] != null){
+                cameFromWatch = true;
+            }
 
             Log.d("candidate: ",candidates.toString());
             Log.d("candidate[0]: ",candidates[0]);
             Log.d("candidate[1]: ",candidates[1]);
-            Log.d("candidate[2]: ",candidates[2]);
-            Log.d("candidate[3]: ",candidates[3]);
-
-
-
-
-
 
             intent.putExtra("zipcode",zipcode);
-            intent.putExtra("location","");
 
-            intent.putExtra("senate_1_name",candidate1[0]);
-            intent.putExtra("senate_2_name",candidate2[0]);
-            intent.putExtra("house_1_name",candidate3[0]);
-            intent.putExtra("house_2_name",candidate4[0]);
-
-            intent.putExtra("senate_1_party",candidate1[1]);
-            intent.putExtra("senate_2_party",candidate2[1]);
-            intent.putExtra("house_1_party",candidate3[1]);
-            intent.putExtra("house_2_party",candidate4[1]);
-
-            intent.putExtra("senate_1_pic",candidate1[2]);
-            intent.putExtra("senate_2_pic",candidate2[2]);
-            intent.putExtra("house_2_pic",candidate3[2]);
-            intent.putExtra("house_1_pic",candidate4[2]);
-
-            intent.putExtra("senate_1_email",candidate1[3]);
-            intent.putExtra("senate_2_email",candidate2[3]);
-            intent.putExtra("house_1_email",candidate3[3]);
-            intent.putExtra("house_2_email",candidate4[3]);
-
-            intent.putExtra("senate_1_web",candidate1[4]);
-            intent.putExtra("senate_2_web",candidate2[4]);
-            intent.putExtra("house_1_web",candidate3[4]);
-            intent.putExtra("house_2_web",candidate4[4]);
-
-            intent.putExtra("senate_1_tweet",candidate1[5]);
-            intent.putExtra("senate_2_tweet",candidate2[5]);
-            intent.putExtra("house_1_tweet",candidate3[5]);
-            intent.putExtra("house_2_tweet", candidate4[5]);
+            intent.putExtra("cameFromWatch",cameFromWatch);
 
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -100,8 +64,12 @@ private static final String TOAST = "/send_toast";
                 Intent intent = new Intent(getBaseContext(), DetailedView.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("name",info[0]);
-                intent.putExtra("party",info[1]);
-                Log.d("PhoneListener","I am listening~~~~ "+info[0]+" "+info[1]+" the original: "+value);
+                intent.putExtra("party", info[1]);
+                intent.putExtra("end",info[2]);
+                intent.putExtra("bioguide",info[3]);
+                intent.putExtra("tweet",info[4]);
+
+            Log.d("PhoneListener","I am listening~~~~ "+info[0]+" "+info[1]+" the original: "+value);
 //            sendIntent.putExtra("name","temporary");
 //            sendIntent.putExtra("party","#BDBDBD");
                 startActivity(intent);

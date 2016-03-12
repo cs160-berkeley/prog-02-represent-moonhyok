@@ -81,14 +81,17 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
         Bundle extras = intent.getExtras();
         final String path;
         final String message;
-        if (extras.getBoolean("congress")){
+        if (extras.getBoolean("change")){
             path = "/congress";
-            message = extras.getString("zipcode")+"&"+extras.getString("massive");
+            Log.d("W2P zipcode",extras.getString("zipcode"));
+            message = extras.getString("zipcode")+"&"+extras.getString("cameFromWatch");
         } else {
             path = "/kk";
-            message = extras.getString("name")+"@#2F80ED";
+            Log.d("tweet in w2phone", extras.getString("tweet"));
+
+            message = extras.getString("name")+"@"+extras.getString("party")+"@"+extras.getString("end")+"@"+extras.getString("bioguide")+"@"+extras.getString("tweet");
         }
-        final String name = extras.getString("name");
+        // final String name = extras.getString("name");
 //        final String senate_1_party = extras.getString("senate_1_party");
 //        final String senate_2_name = extras.getString("senate_2_name");
 //        final String senate_2_party = extras.getString("senate_2_party");
@@ -102,7 +105,6 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
             @Override
             public void run() {
                 //first, connect to the apiclient
-                Log.d("WatchToPhone","I get called first!! "+name);
                 mWatchApiClient.connect();
                 //now that you're connected, send a massage with the cat name
                 sendMessage(path, message);

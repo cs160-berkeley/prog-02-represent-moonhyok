@@ -12,52 +12,67 @@
     tools:context="com.cs160.joleary.catnip.CongressionalMain">
 
     <LinearLayout
+        android:id="@+id/location_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="15dp"
+        android:paddingBottom="10dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:text="@string/showing"/>
 
         <TextView
             android:id="@+id/show_location"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:indeterminate="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
 
 
     <TextView
+        android:id="@+id/senate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="8pt"
-        android:paddingBottom="5dp"
+        android:layout_marginBottom="15dp"
         android:textStyle="bold"
         android:text="@string/senate"/>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/senate_1_party"
         android:tag="senate1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="85dp"
         android:clickable="true"
         android:onClick="onClick"
-        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/senate_1_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"/>
+            android:layout_alignParentLeft="true"
+            android:layout_width="100dp"
+            android:layout_height="85dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:paddingLeft="20dp"
             android:weightSum="1.0"
             android:orientation="vertical">
 
@@ -65,7 +80,8 @@
                 android:id="@+id/senate_1_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:textStyle="bold"
                 android:textSize="8pt"
                 android:layout_weight="0.4"
@@ -75,7 +91,8 @@
                 android:id="@+id/senate_1_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:textSize="5pt"
                 android:layout_weight="0.3"/>
 
@@ -83,6 +100,7 @@
                 android:id="@+id/senate_1_web"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:textSize="5pt"
                 android:layout_weight="0.3"/>
 
@@ -91,51 +109,56 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="5dp"
+            android:tag="senate1"
+            android:layout_alignParentRight="true"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:onClick="twitterOnClick"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/senate_1_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:src="@drawable/twitter"/>
 
             <TextView
                 android:id="@+id/senate_1_tweet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="3"/>
+                android:layout_gravity="center"
+                android:text="Tweet!"/>
 
 
         </LinearLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/senate_2_party"
         android:tag="senate2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="85dp"
         android:clickable="true"
         android:onClick="onClick"
-        android:paddingBottom="10dp"
+        android:layout_marginBottom="15dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/senate_2_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"/>
+            android:layout_alignParentLeft="true"
+            android:layout_width="100dp"
+            android:layout_height="85dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:paddingLeft="20dp"
             android:weightSum="1.0"
             android:orientation="vertical">
 
@@ -143,7 +166,8 @@
                 android:id="@+id/senate_2_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:textStyle="bold"
                 android:textSize="8pt"
                 android:layout_weight="0.4"
@@ -153,7 +177,8 @@
                 android:id="@+id/senate_2_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:textSize="5pt"
                 android:layout_weight="0.3"/>
 
@@ -161,6 +186,7 @@
                 android:id="@+id/senate_2_web"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:textSize="5pt"
                 android:layout_weight="0.3"/>
 
@@ -169,54 +195,64 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="5dp"
+            android:layout_alignParentRight="true"
+            android:tag="senate2"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:onClick="twitterOnClick"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/senate_2_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:src="@drawable/twitter"/>
 
             <TextView
                 android:id="@+id/senate_2_tweet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="3"/>
+                android:layout_gravity="center"
+                android:text="Tweet!"/>
 
 
         </LinearLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
+        android:id="@+id/house"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="8pt"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/house"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/house_1_party"
         android:tag="house1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="85dp"
         android:clickable="true"
         android:onClick="onClick"
-        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/house_1_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"/>
+            android:layout_alignParentLeft="true"
+            android:layout_width="100dp"
+            android:layout_height="85dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:paddingLeft="20dp"
             android:weightSum="1.0"
             android:orientation="vertical">
 
@@ -224,7 +260,8 @@
                 android:id="@+id/house_1_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:textStyle="bold"
                 android:textSize="8pt"
                 android:layout_weight="0.4"
@@ -234,7 +271,8 @@
                 android:id="@+id/house_1_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:textSize="5pt"
                 android:layout_weight="0.3"/>
 
@@ -242,6 +280,7 @@
                 android:id="@+id/house_1_web"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:textSize="5pt"
                 android:layout_weight="0.3"/>
 
@@ -250,49 +289,55 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="5dp"
+            android:tag="house1"
+            android:layout_alignParentRight="true"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:onClick="twitterOnClick"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/house_1_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:src="@drawable/twitter"/>
 
             <TextView
                 android:id="@+id/house_1_tweet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="3"/>
+                android:layout_gravity="center"
+                android:text="Tweet!"/>
 
 
         </LinearLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/house_2_party"
         android:tag="house2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="85dp"
         android:clickable="true"
         android:onClick="onClick"
-        android:paddingBottom="10dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/house_2_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"/>
+            android:layout_alignParentLeft="true"
+            android:layout_width="100dp"
+            android:layout_height="85dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:paddingLeft="20dp"
             android:weightSum="1.0"
             android:orientation="vertical">
 
@@ -300,7 +345,8 @@
                 android:id="@+id/house_2_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:textStyle="bold"
                 android:textSize="8pt"
                 android:layout_weight="0.4"
@@ -310,7 +356,8 @@
                 android:id="@+id/house_2_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:textSize="5pt"
                 android:layout_weight="0.3"/>
 
@@ -318,6 +365,7 @@
                 android:id="@+id/house_2_web"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:textSize="5pt"
                 android:layout_weight="0.3"/>
 
@@ -326,27 +374,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="5dp"
+            android:tag="house2"
+            android:layout_alignParentRight="true"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:onClick="twitterOnClick"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/house_2_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:src="@drawable/twitter"/>
 
             <TextView
                 android:id="@+id/house_2_tweet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="3"/>
+                android:layout_gravity="center"
+                android:text="Tweet!"/>
 
 
         </LinearLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

@@ -4,7 +4,9 @@
     <string name="hello_world">Hello world!</string>
 
     <string name="zip_hint">Zipcode</string>
-    <string name="loc_hint">Current Location</string>
+    <string name="loc_hint">Address</string>
+    <string name="current">Use Current Location</string>
+
 
     <string name="senate">Senate</string>
     <string name="house">House of Representative</string>

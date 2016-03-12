@@ -31,6 +31,7 @@ public class WatchListenerService extends WearableListenerService {
         String[] info = value.split("&");
 
         Log.d("KJIJEIFJ",value);
+        Log.d("traking listener",info[4]);
 
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //        System.out.println(value);
@@ -39,21 +40,11 @@ public class WatchListenerService extends WearableListenerService {
         intent.putExtra("senate_2", info[1]);
         intent.putExtra("house_1", info[2]);
         intent.putExtra("house_2", info[3]);
-        intent.putExtra("location",info[4]);
+        intent.putExtra("county",info[4]);
+        intent.putExtra("election_data",info[5]);
 
 //        Log.d("T", "about to start watch MainActivity with CAT_NAME: Fred");
         startActivity(intent);
-//        } else if (messageEvent.getPath().equalsIgnoreCase( LEXY_FEED )) {
-//            String value = new String(messageEvent.getData(), StandardCharsets.UTF_8);
-//            Intent intent = new Intent(this, MainActivity.class );
-//            intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
-//            //you need to add this flag since you're starting a new activity from a service
-//            intent.putExtra("CAT_NAME", "Lexy");
-//            Log.d("T", "about to start watch MainActivity with CAT_NAME: Lexy");
-//            startActivity(intent);
-//        } else {
-//            super.onMessageReceived( messageEvent );
-//        }
 
     }
 }

@@ -57,12 +57,24 @@ public class PhoneToWatchService extends Service {
         final String house_1_name = extras.getString("house_1_name");
         final String house_1_party = extras.getString("house_1_party");
 
-        final String location;
-        if (extras.getString("location").equals("")){
-            location = extras.getString("zipcode");
-        } else {
-            location = extras.getString("location");
-        }
+        final String senate_1_end = extras.getString("senate_1_end");
+        final String senate_2_end = extras.getString("senate_2_end");
+        final String house_2_end = extras.getString("house_2_end");
+        final String house_1_end = extras.getString("house_1_end");
+
+        final String senate_1_bioguide = extras.getString("senate_1_bioguide");
+        final String senate_2_bioguide = extras.getString("senate_2_bioguide");
+        final String house_2_bioguide = extras.getString("house_2_bioguide");
+        final String house_1_bioguide = extras.getString("house_1_bioguide");
+
+        final String senate_1_tweet = extras.getString("senate_1_tweet");
+        final String senate_2_tweet = extras.getString("senate_2_tweet");
+        final String house_2_tweet = extras.getString("house_2_tweet");
+        final String house_1_tweet = extras.getString("house_1_tweet");
+
+        final String election_data = extras.getString("election_data");
+
+        final String county = extras.getString("county");
 
 //        Log.d("KKK",location+" &&& "+zipcode);
 
@@ -73,8 +85,11 @@ public class PhoneToWatchService extends Service {
                 //first, connect to the apiclient
                 mApiClient.connect();
                 //now that you're connected, send a massage with the cat name
-                sendMessage("/" + senate_1_name, senate_1_name+"@"+senate_1_party+"&"
-                +senate_2_name+"@"+senate_2_party+"&"+house_1_name+"@"+house_1_party+"&"+house_2_name+"@"+house_2_party+"&"+location);
+                sendMessage("/" + senate_1_name, senate_1_name+"@"+senate_1_party+"@"+senate_1_end+"@"+senate_1_bioguide+"@"+senate_1_tweet+"&"
+                +senate_2_name+"@"+senate_2_party+"@"+senate_2_end+"@"+senate_2_bioguide+"@"+senate_2_tweet+"&"
+                +house_1_name+"@"+house_1_party+"@"+house_1_end+"@"+house_1_bioguide+"@"+house_1_tweet+"&"
+                +house_2_name+"@"+house_2_party+"@"+house_2_end+"@"+house_2_bioguide+"@"+house_2_tweet+"&"
+                +county+"&"+election_data);
             }
         }).start();
 

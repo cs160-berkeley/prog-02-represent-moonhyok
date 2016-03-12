@@ -1,46 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/watch_background"-->
+    <!--android:layout_width="360dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_height="match_parent">-->
+
+
+
+
+    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/pic"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:src="@drawable/donkey"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_gravity="center|top" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<android.support.wearable.view.CardScrollView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/card_scroll_view"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_box="bottom">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<android.support.wearable.view.CardFrame&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_gravity="center|bottom">&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash; &ndash;&gt;-->
+                <!--&lt;!&ndash;android:clickable="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:onClick="onClick"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:orientation="vertical">&ndash;&gt;-->
+
+
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cand_name"-->
+                    <!--android:layout_width="360dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="KKKKKK"-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="12pt" />-->
+
+
+            <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+        <!--&lt;!&ndash;</android.support.wearable.view.CardFrame>&ndash;&gt;-->
+    <!--&lt;!&ndash;</android.support.wearable.view.CardScrollView>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<Button&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/elect"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="30dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_alignParentBottom="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_gravity="center|bottom"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="2012 Election"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textSize="4pt" />&ndash;&gt;-->
+
+<!--</android.support.wearable.view.BoxInsetLayout>-->
+
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:onClick="onClick"
+    android:layout_width="match_parent">
 
+    <!--<android.support.wearable.view.CardScrollView-->
+        <!--android:id="@+id/card_scroll_view"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="match_parent"-->
+        <!--app:layout_box="bottom">-->
 
-    <LinearLayout
-        android:id="@+id/watch_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#2F80ED"
-        android:clickable="true"
-        android:onClick="onClick"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/pic"
-            android:layout_width="wrap_content"
+        <android.support.wearable.view.CardFrame
             android:layout_height="wrap_content"
-            android:layout_gravity="center|top" />
+            android:layout_width="match_parent">
 
-        <TextView
-            android:id="@+id/cand_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:textColor="#FFFFFF"
-            android:textSize="12pt" />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="5dp">
 
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/elect"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:text="2012 Election"
-        android:textSize="4pt" />
-
+                <TextView
+                android:id="@+id/cand_name"
+                android:fontFamily="sans-serif-light"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="custom_card"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </android.support.wearable.view.CardFrame>
+    <!--</android.support.wearable.view.CardScrollView>-->
 </android.support.wearable.view.BoxInsetLayout>
-<!---->

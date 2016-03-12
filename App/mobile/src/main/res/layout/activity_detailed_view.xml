@@ -11,85 +11,91 @@
     android:gravity="center"
     tools:context="com.cs160.joleary.catnip.DetailedView">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="30dp"
+        android:indeterminate="true"
+        android:layout_gravity="center|bottom"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="15dp"
-        android:src="@drawable/fred_160"/>
+        android:id="@+id/picture"
+        android:layout_width="160dp"
+        android:layout_height="160dp"/>
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="15dp"
         android:textSize="18pt"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/info_term"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="10dp"
+            android:layout_marginRight="5dp"
             android:text="Term Ending on:"/>
 
         <TextView
+            android:id="@+id/end_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="8pt"
-            android:textStyle="bold"
-            android:text="2019"/>
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         android:gravity="center">
 
         <TextView
+            android:id="@+id/info_committee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingRight="10dp"
-            android:text="Current Committee:"/>
+            android:text="Current Committee(s):"/>
 
         <TextView
+            android:id="@+id/current_committee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="8pt"
-            android:textStyle="bold"
-            android:text="Committee on Intelligence\n Committee on Appropriations"/>
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
         android:orientation="vertical"
         android:gravity="center">
 
         <TextView
+            android:id="@+id/info_bill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingRight="10dp"
             android:text="Recent Bills:"/>
 
         <TextView
+            android:id="@+id/recent_bills"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="8pt"
-            android:textStyle="bold"
-            android:text="2.10.16 Drought Relief Bill"/>
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
